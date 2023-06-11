@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://goalapp-backend.vercel.app/api/goals/";
+const API_URL = "https://goalapp-backend.vercel.app/api/goals";
 
 // Create new goal
 const createGoal = async (goalData, token) => {
@@ -36,7 +36,7 @@ const deleteGoal = async (goalId, token) => {
     },
   };
 
-  const response = await axios.delete(API_URL + goalId, config);
+  const response = await axios.delete(API_URL + "/" + goalId, config);
 
   return response.data;
 };
